@@ -41,13 +41,23 @@ Returns a list of the current constructor's championship standings if no paramet
 
 **get_race_season():**
 
+Retrurns a list of all the races this current season by default. Includes round number, race name, and country. If parameters are specified, the function returns a list of all races held for the season entered. Valid years are from 1950 onwards until the current season. 
+
 **get_race_schedule():**
+
+If no parameters are given, this function returns the schedule of the next race in the surrent season. If the round number is given as a parameter, the schedule for the given round of this season will be returned instead. Unlike the previous functions, the scope of this function is only extended to the current season and not any seasons before it. The schedule is presented in order of UTC time, and is compatible between both normal weekends and sprint weekends. The valid range for this function are the number of rounds that are present in the current season.  
 
 **get_race_results():**
 
+Similar to the get_race_schedule() function, this function is also limited to only the current season. When called with no parameters, the function will return the race results (finishing position, point scored) of the drivers of the most recent race. If a round number is passed in as a parameter, the function will return the race result of the round that has been specified. The valid range for this function are the rounds that have already been completed this season. 
+
 **get_teams():**
 
+This function takes in no additional parameters. The purpose of this function is to return a list of driver names (assorted in alphabetical order by first name) and the constructor that the driver currently drives for.  
+
 **get_help():**
+
+This is a non-API related help function that returns a text stating the way to call the aforementioned functions through commands on Discord, and the specific parameters which they accept. 
 
 ## **Remarks:**
 
