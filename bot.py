@@ -27,7 +27,7 @@ class MyClient(discord.Client):
         # In response to "hello".
         if (message.content).lower().startswith("$hello"):
             await message.channel.send(
-                "hello! I can help with F1 stats. Type '$help' for command specifications."
+                "Hello! I can help with F1 stats. Type '$help' for command specifications."
             )
 
         # Sends driver's championship.
