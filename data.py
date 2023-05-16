@@ -1,7 +1,9 @@
+# Modules
 import requests
 import json
 
 
+# Returns list of current driver standings. Parameters specify a specific year starting 1950.
 def get_driver_standings(prev=None):
     standings = []
     if prev == None:
@@ -15,9 +17,11 @@ def get_driver_standings(prev=None):
                 f'{name["Driver"]["givenName"]} {name["Driver"]["familyName"]}: {name["points"]} points'
             )
         )
+    # Splits list into own line with a line gap in between.
     return "\n\n".join(standings)
 
 
+# Returns a list of current constructor standings. Parameters specify a specific year starting 1958.
 def get_constructor_standings(prev=None):
     standings = []
     if prev == None:
@@ -34,6 +38,7 @@ def get_constructor_standings(prev=None):
     return "\n\n".join(standings)
 
 
+# Returns a list of races in the current season. Parameters specify a specific season starting 1950.
 def get_race_season(prev=None):
     season = []
     if prev == None:
@@ -48,11 +53,13 @@ def get_race_season(prev=None):
     return "\n\n".join(season)
 
 
+# Returns the schedule of the next race this season. "round" parameter returns schedule of specified round this season.
 def get_race_schedule(round=None, sprint=None):
     if round == None:
         data = requests.get(f"https://ergast.com/api/f1/current/next.json")
     else:
         data = requests.get(f"https://ergast.com/api/f1/current/{round}.json")
+    # Determines if the specified round is a sprint race weekend. Dict keys are different if true.
     try:
         if data.json()["MRData"]["RaceTable"]["Races"][0]["Sprint"]:
             sprint = True
@@ -94,6 +101,7 @@ def get_race_schedule(round=None, sprint=None):
                 \n\nGrand Prix date: {race_date}\nGrand Prix time: {race_time}"
 
 
+# Returns the race results of the most recent race. Parameters return the results of the specified round this season.
 def get_race_results(prev=None):
     results = []
     if prev == None:
@@ -112,6 +120,7 @@ def get_race_results(prev=None):
     return "\n\n".join(results)
 
 
+# Returns a list of drivers and the teams the constructor they drive for. Sorted alphabetically by driver names (first).
 def get_teams():
     drivers = []
     constructors = []
@@ -128,6 +137,7 @@ def get_teams():
     return "\n\n".join(by_driver_name)
 
 
+# Returns a list of the commands and parameters required to interact with the bot.
 def get_help():
     return f"List of bot commands:\
             \n\n'$hello': Welcome message\
