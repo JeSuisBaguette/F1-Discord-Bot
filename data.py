@@ -96,7 +96,7 @@ def get_race_schedule(round=None, sprint=None):
         sprint_time = data.json()["MRData"]["RaceTable"]["Races"][0]["Sprint"]["time"]
         return f"Season: {current_season}\nRound: {current_round}\nRace: {race_name}\
                 \n\nFP1 date: {fp1_date}\nFP1 time: {fp1_time}\n\nQualifying date: {qualifying_date}\
-                \nQualifying time: {qualifying_time}\n\nFP2 date: {fp2_date}\nFP2 time: {fp2_time}\
+                \nQualifying time: {qualifying_time}\n\nSprint qualifying date: {fp2_date}\nSprint qualifying time: {fp2_time}\
                 \n\nSprint date: {sprint_date}\nSprint time: {sprint_time}\
                 \n\nGrand Prix date: {race_date}\nGrand Prix time: {race_time}"
 
