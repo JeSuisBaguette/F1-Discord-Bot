@@ -8,8 +8,7 @@ from data import (
     get_race_season,
     get_race_schedule,
     get_race_results,
-    get_teams,
-    get_help,
+    get_teams
 )
 
 
@@ -120,6 +119,18 @@ class MyClient(discord.Client):
             await message.channel.send(help)
 
 
+# Returns a list of the commands and parameters required to interact with the bot.
+def get_help():
+    return f"List of bot commands:\
+            \n\n'$hello': Welcome message\
+            \n\n'$driver': Current driver standings. Append '-YYYY' where 'YYYY' is a year between 1950 - current season.\
+            \n\n'$constructor': Current constructor standings. Append '-YYYY' where 'YYYY' is a year between 1958 - current season.\
+            \n\n'$season': Current season races. Append '-YYYY' where 'YYYY' is a year between 1950 - current season.\
+            \n\n'$schedule': Next race schedule. Append '-X' where 'X' is the round of the current season you wish to view the schedule of.\
+            \n\n'$result': Most recent race results. Append '-X' where 'X' is the round of the current season you wish to view the results of.\
+            \n\n'$team': Current driver pairings on the grid ordered by driver names (first)."
+            
+            
 # System
 load_dotenv()
 intents = discord.Intents().all()
