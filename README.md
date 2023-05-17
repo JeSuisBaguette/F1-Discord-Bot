@@ -57,7 +57,7 @@ This function takes in no additional parameters. The purpose of this function is
 
 **get_help():**
 
-This is a non-API related help function that returns a text stating the way to call the aforementioned functions through commands on Discord, and the specific parameters which they accept. 
+This is a non-API related help function housed in the bot.py file that returns a text stating the way to call the aforementioned functions through commands on Discord, and the specific parameters (if any) which they accept. 
 
 ## **Remarks:**
 
