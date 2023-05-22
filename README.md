@@ -11,7 +11,7 @@ This is a discord bot which upon receiving commands, sends a channel text messag
 
 ### **Bot.py:**
 
-Contains code that interacts with the Discord API. Houses all functions and classes necessary to make the bot run in context of Discord.
+Contains code that interacts with the Discord API. Houses all functions and classes necessary to make the bot run on Discord servers.
 
 ### **Data.py:**
 
